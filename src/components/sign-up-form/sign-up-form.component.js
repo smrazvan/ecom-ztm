@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -26,11 +27,12 @@ function SignUpForm() {
     event.preventDefault();
     if (!displayName && email && password === confirmPassword) return;
     try {
-      const response = await createAuthUserWithEmailAndPassword(
+      const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
-      await createUserDocumentFromAuth(response.user, { displayName });
+      await createUserDocumentFromAuth(user, { displayName });
+
       //reset form values
       setFormFields(defaultFormFields);
     } catch (err) {

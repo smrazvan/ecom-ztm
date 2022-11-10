@@ -1,5 +1,15 @@
 import { createContext, useState, useEffect } from "react";
 
+const CartReducer = (state, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case "ADD_CART_ITEM":
+      return {};
+    default:
+      throw new Error(`Unhandled type ${type} in CartReducer`);
+  }
+};
+
 const addCartItem = (cartItems, productToAdd) => {
   const found = [...cartItems].find((product) => product.id == productToAdd.id);
   if (found) {

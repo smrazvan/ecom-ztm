@@ -64,7 +64,11 @@ function SignInForm(props) {
         />
         <div className="buttons-container">
           <Button type="submit">Submit</Button>
-          <Button type="button" buttonType="google" onClick={signInWithGoogle}>
+          <Button
+            type="button"
+            buttonType="google-sign-in"
+            onClick={signInWithGoogle}
+          >
             Sign in with google popup
           </Button>
         </div>

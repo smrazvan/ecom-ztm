@@ -77,7 +77,7 @@ function SignUpForm() {
           required
         />
 
-        <Button buttonType="google" type="submit">
+        <Button buttonType="google-sign-in" type="submit">
           Submit
         </Button>
       </form>
